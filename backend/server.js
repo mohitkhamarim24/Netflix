@@ -1,7 +1,16 @@
 import express from 'express';
+import authRoutes from './routes/auth.route.js';
+import { ENV_VARS } from './config/envVars.js';
+import { connect } from 'mongoose';
+import { connectDB } from './config/db.js';
 const app = express();
-
+const PORT = ENV_VARS.PORT;
+app.use(express.json());
+app.all("/", (req, res) => {
+    res.send("Welcome to the API");
+});
 app.use("/api/v1/auth",authRoutes);
-app.listen(5000, () => {
-    console.log('Server started at http://localhost:5000');  // Changed to 'http'
+app.listen(PORT, () => {
+    console.log('Server started at http://localhost:' + PORT); 
+    connectDB();
 });
