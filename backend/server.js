@@ -21,6 +21,7 @@ app.all("/", (req, res) => {
 app.use("/api/v1/auth",authRoutes);
 app.use("/api/v1/movies",protectRoute,movieRoutes);
 app.use("/api/v1/tv",protectRoute,tvRoutes);
+app.use("/api/v1/search",protectRoute,seachRoutes)
 app.listen(PORT, () => {
     console.log('Server started at http://localhost:' + PORT); 
     connectDB();
