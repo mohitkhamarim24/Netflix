@@ -1,17 +1,9 @@
 import express from "express";
-import { fetchFromTMDB } from "../services/tmdb.service";
-import { searchMovie,searchPerson,searchTv } from "../controllers/search.controller";
-
-const {query}  = req.params;
-try {
-    const response =  await fetchFromTMDB(`https://api.themoviedb.org/3/search/person?query= ${query} &include_adult=false&language=en-US&page=1`)
-}catch (error) {
-    
-}
-
+import { searchMovie, searchPerson, searchTv, getSearchHistory, removeItemFromSearchHistory } from "../controllers/search.controller.js";
 const router = express.Router();
-
 router.get("/person/:query" , searchPerson);
 router.get("/movie/:query" , searchMovie);
-router.get("/movie/:query",searchTv);
+router.get("/tv/:query",searchTv);
+router.get("/history",getSearchHistory);
+router.delete("/history/:id",removeItemFromSearchHistory);
 export default router;
