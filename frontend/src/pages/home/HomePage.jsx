@@ -1,12 +1,15 @@
+import { useAuthStore } from "../../store/authUser";
+import AuthScreen from "./AuthScreen";
 import HomeScreen from "./HomeScreen";
-import AuthScreen from "./authScreen";
-const HomePage = () => {
-  const user = false;
-  return (
-<div>
-  {user ? <HomeScreen/> : <AuthScreen/>}
-</div>
-  )
-}
 
-export default HomePage
+const HomePage = () => {
+    const { user, isCheckingAuth } = useAuthStore();
+
+    if (isCheckingAuth) {
+        return <div>Loading...</div>; // Optionally replace with a spinner component
+    }
+
+    return <>{user ? <HomeScreen /> : <AuthScreen />}</>;
+};
+
+export default HomePage;
