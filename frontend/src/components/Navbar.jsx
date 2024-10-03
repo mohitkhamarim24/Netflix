@@ -11,9 +11,6 @@ const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
 const {setContentType} = useContentStore();
 
-
-
-console
   return <header className="max-w-6xl mx-auto flex flex-wrap items-center  p-4 h-20">
   <div className="flex items-center gap-10 z-50">
 <Link to ="/">
@@ -50,7 +47,7 @@ console
             <Link to ={"/"} className="block hover:underline p-2" onClick={toggleMobileMenu}>
             Movies</Link>
             <Link to ={"/"} className="block hover:underline p-2" onClick={toggleMobileMenu}>
-            Tv shopws</Link>
+            Tv shows</Link>
             <Link to ={"/search"} className="block hover:underline p-2" onClick={toggleMobileMenu}>
             Search History</Link>
         </div>
