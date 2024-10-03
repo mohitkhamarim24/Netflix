@@ -19,7 +19,7 @@ app.all("/", (req, res) => {
     res.send("Welcome to the API");
 });
 app.use("/api/v1/auth",authRoutes);
-app.use("/api/v1/movies",protectRoute,movieRoutes);
+app.use("/api/v1/movie",protectRoute,movieRoutes);
 app.use("/api/v1/tv",protectRoute,tvRoutes);
 app.use("/api/v1/search",protectRoute,searchRoutes);
 app.listen(PORT, () => {
