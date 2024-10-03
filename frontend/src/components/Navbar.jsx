@@ -48,7 +48,7 @@ const {setContentType} = useContentStore();
             Movies</Link>
             <Link to ={"/"} className="block hover:underline p-2" onClick={toggleMobileMenu}>
             Tv shows</Link>
-            <Link to ={"/search"} className="block hover:underline p-2" onClick={toggleMobileMenu}>
+            <Link to ={"/history"} className="block hover:underline p-2" onClick={toggleMobileMenu}>
             Search History</Link>
         </div>
        )}
